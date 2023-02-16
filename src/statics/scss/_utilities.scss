@@ -1,0 +1,432 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    'end-negative': (
+      property: right,
+      class: end-negative,
+      values: (
+        1: -1px,
+      ),
+    ),
+    'letter-spacing':
+      (
+        property: letter-spacing,
+        class: letter-spacing,
+        values: (
+          2: 0.02rem,
+          3: 0.03rem,
+          4: 0.04rem,
+          5: 0.05rem,
+        ),
+      ),
+    'f':
+      (
+        property: font-size,
+        class: f,
+        responsive: true,
+        values: (
+          4: 4px,
+          10: 10px,
+          12: 12px,
+          14: 14px,
+          16: 16px,
+          18: 18px,
+          20: 20px,
+        ),
+      ),
+    'fw': (
+      property: font-weight,
+      class: fw,
+      values: (
+        300: 300,
+        400: 400,
+        500: 500,
+        600: 600,
+        700: 700,
+      ),
+    ),
+    'b': (
+      property: border,
+      class: b,
+      state: hover focus focus-visible,
+      values: (
+        'none': none,
+        '1-dark2': 1px solid $dark2,
+        '1-light2': 1px solid $light2,
+        '1-dark17': 1px solid $dark17,
+        '1-light17': 1px solid $light17,
+        'transparent': 0.01em solid transparent,
+        'dark5': 0.01em solid $dark5,
+        'light3': 0.01em solid $light3,
+        'dark3': 0.01em solid $dark3,
+        'light5': 0.01em solid $light5,
+        'light15': 0.01em solid $light15,
+        'dark15': 0.01em solid $dark15,
+      ),
+    ),
+    'bb-dashed': (
+      property: border-bottom,
+      class: bb-dashed,
+      values: (
+        'dark9': 0.5px solid $dark9,
+        'light9': 0.5px solid $light9,
+      ),
+    ),
+    'bb': (
+      property: border-bottom,
+      class: bb,
+      values: (
+        'dark9': 0.5px solid $dark9,
+        'light9': 0.5px solid $light9,
+        'dark17': 0.5px solid $dark17,
+        'light17': 0.5px solid $light17,
+        
+      ),
+    ),
+    'bt': (
+      property: border-top,
+      class: bt,
+      values: (
+        'dark9': 0.5px solid $dark9,
+        'light9': 0.5px solid $light9,
+        'dark17': 1px solid $dark17,
+        'light17': 1px solid $light17,
+      ),
+    ),
+    'be': (
+      property: border-right,
+      class: be,
+      responsive: true,
+      values: (
+        'dark9': 0.5px solid $dark9,
+        'light9': 0.5px solid $light9,
+        'dark17': 1px solid $dark17,
+        'light17': 1px solid $light17,
+      ),
+    ),
+    'bs': (
+      property: border-left,
+      class: bs,
+      responsive: true,
+      values: (
+        'dark17': 1px solid $dark17,
+        'light17': 1px solid $light17,
+        'dark9': 0.5px solid $dark9,
+        'light9': 0.5px solid $light9,
+      ),
+    ),
+    'br': (
+      property: border-radius,
+      class: br,
+      values: (
+        3: 3px,
+        5: 5px,
+        6: 6px,
+        8: 8px,
+        10: 10px,
+      ),
+    ),
+    'cs': (
+      property: cursor,
+      class: cs,
+      values: (
+        'pointer': pointer,
+      ),
+    ),
+    'z': (
+      property: z-index,
+      class: z,
+      values: (
+        1: 1,
+        2: 2,
+        9: 9,
+        10: 10,
+        99: 99,
+      ),
+    ),
+    'p': (
+      property: padding,
+      class: p,
+      responsive: true,
+      values: (
+        10: 10px,
+        12: 12px,
+        20: 20px,
+        28: 28px,
+        32: 32px,
+      ),
+    ),
+    'p-x': (
+      property: padding-right padding-left,
+      class: p-x,
+      responsive: true,
+      values: (
+        6: 6px,
+        8: 8px,
+        10: 10px,
+        12: 12px,
+        16: 16px,
+        20: 20px,
+      ),
+    ),
+    'p-y': (
+      property: padding-top padding-bottom,
+      class: p-y,
+      values: (
+        6: 6px,
+        8: 8px,
+        10: 10px,
+        12: 12px,
+        16: 16px,
+        20: 20px,
+      ),
+    ),
+    'p-s': (
+      property: padding-left,
+      responsive: true,
+      class: p-s,
+      values: (
+        0: 0px,
+        5: 5px,
+        10: 10px,
+        12: 12px,
+        14: 14px,
+        20: 20px,
+      ),
+    ),
+    'p-e': (
+      property: padding-right,
+      responsive: true,
+      class: p-e,
+      values: (
+        10: 10px,
+        12: 12px,
+        14: 14px,
+        20: 20px,
+      ),
+    ),
+    'p-b': (
+      property: padding-bottom,
+      class: p-b,
+      values: (
+        12: 12px,
+        16: 16px,
+        20: 20px,
+      ),
+    ),
+    'p-t': (
+      property: padding-top,
+      class: p-t,
+      values: (
+        6: 6px,
+        10: 10px,
+        12: 12px,
+        18: 18px,
+      ),
+    ),
+    'm': (
+      property: margin,
+      class: m,
+      values: (
+        1: 1px,
+      ),
+    ),
+    'm-s': (
+      property: margin-left,
+      responsive: true,
+      class: m-s,
+      values: (
+        0: 0,
+        3: 3px,
+        6: 6px,
+        8: 8px,
+        12: 12px,
+        15: 15px,
+        20: 20px,
+      ),
+    ),
+    'm-e': (
+      property: margin-right,
+      responsive: true,
+      class: m-e,
+      values: (
+        0: 0,
+        10: 10px,
+        20: 20px,
+      ),
+    ),
+    'm-t': (
+      property: margin-top,
+      responsive: true,
+      class: m-t,
+      values: (
+        8: 8px,
+        12: 12px,
+        13: 13px,
+        14: 14px,
+        16: 16px,
+        18: 18px,
+        20: 20px,
+        30: 30px,
+      ),
+    ),
+    'm-b': (
+      property: margin-bottom,
+      responsive: true,
+      class: m-b,
+      values: (
+        0: 0,
+        10: 10px,
+        12: 12px,
+        15: 15px,
+        20: 20px,
+        30: 30px,
+      ),
+    ),
+    'lh': (
+      property: line-height,
+      class: lh,
+      responsive: true,
+      values: (
+        1: 1,
+        14: 14px,
+        16: 16px,
+      ),
+    ),
+    'w': (
+      property: width,
+      class: w,
+      responsive: true,
+      values: (
+        0: 0,
+        15: 15%,
+        30: 30%,
+        40: 40%,
+        60: 60%,
+        70: 70%,
+        80: 80%,
+        90: 90%,
+        95: 95%,
+        100: 100%,
+        'initial':initial,
+        )
+    ),
+    'mw': (
+      property: min-width,
+      class: mw,
+      responsive: true,
+      values: (
+        'auto': auto,
+        100: 100px,
+        120: 120px,
+        150: 150px,
+        180: 180px,
+        200: 200px,
+      ),
+    ),
+    'mh': (
+      property: min-height,
+      class: mh,
+      responsive: true,
+      values: (
+        'auto': auto,
+        100: 100px,
+        120: 120px,
+        150: 150px,
+        180: 180px,
+        200: 200px,
+      ),
+    ),
+    'h': (
+      property: height,
+      class: h,
+      responsive: true,
+      values: (
+        0: 0,
+        16: 16px,
+        20: 20px,
+        32: 32px,
+        36: 36px,
+        620: 620px,
+      ),
+    ),
+    'top': (
+      property: top,
+      class: top,
+      responsive: true,
+      values: (
+        0: 0,
+        2: 2px,
+        5: 5px,
+        10: 10px,
+        20: 20px,
+      ),
+    ),
+    'bg': (
+      property: background-color,
+      class: bg,
+      state: hover,
+      responsive: true,
+      values: (
+        'dark6': $dark6,
+        'dark7': $dark7,
+        'dark4': $dark4,
+        'light4': $light4,
+        
+      ),
+    ),
+    'text': (
+      property: color,
+      class: text,
+      state: hover,
+      responsive: true,
+      values: (
+        'dark22': $dark22,
+        'light22': $light22,
+        'dark5': $dark5,
+        'dark4': $dark4,
+        'dark6': $dark6,
+        'dark28': $dark28,
+        'light28': $light28,
+      ),
+    ),
+    'opacity': (
+      property: opacity,
+      class: opacity,
+      values: (
+        0: 0,
+        40: 0.4,
+        100: 1 
+      )
+    ),
+    'outline': (
+      property: outline,
+      class: outline,
+      values: (
+        'none': none,
+      ),
+    ),
+    'white-space': (
+      property: white-space,
+      class: white-space,
+      values: (
+        'nowrap': nowrap,
+        'normal': normal,
+      ),
+    ),
+    'list-style': (
+      property: list-style,
+      class: list-style,
+      values: (
+        'none': none,
+      ),
+    ),
+    'flex-1': (
+      property: flex,
+      class: flex-1,
+      values: (
+        null: 1,
+      ),
+    ),
+  )
+);
