@@ -3,7 +3,7 @@ import React from 'react';
 import NonePage from './pages/common-page/';
 import ListMovie from './pages/list-movie';
 import SingleMovie from './pages/single-movie';
-import Layout from './layout/Layout';
+import Layout from './layout/layout';
 
 const RouteContainer = () => (
   <Routes>

@@ -432,5 +432,13 @@ $utilities: map-merge(
         null: 1,
       ),
     ),
+    'col': (
+      property: width,
+      class: col,
+      responsive: true,
+      values: (
+       20: 20%,
+      ),
+    ),
   )
 );

@@ -10,10 +10,10 @@ function MovieCard({ data }) {
     navigate('/single-movie/'+data.id)
   }
   return (
-    <div className="col-12 col-sm-6 col-md-4 col-lg-3 px-2 mt-3">
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-20 px-2 mt-3">
       <Wapper className='br-5'>
       <div className="w-100 " style={{  minHeight: 390 }}>
-        <div className='custom-img h-300'>
+        <div className='custom-img h-300 cs-pointer' onClick={goDetailMovie}>
             <img srcSet={Config.domain_poster + data.poster_path} className='w-100 h-300' />
         </div>
         <div className='content px-2  position-relative'>

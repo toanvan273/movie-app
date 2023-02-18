@@ -1,18 +1,17 @@
-import React from 'react';
-import MovieCard from './movie-card';
-import { useQueryPopularMovie } from './query-client';
+import React, { useRef } from 'react';
+import { useParams } from 'react-router-dom';
+import NowPlayingMovie from './now-playing';
+import PopularMovie from './popular';
+import TopRatedMovie from './top-rated';
 
 function ListMovie() {
-  const { data, error } = useQueryPopularMovie();
-  console.log('check:',data);
+  const params = useParams()
+
   return (
-    <div className='container'>
-      <div className='row'>
-        {data && data?.data.results.map((item, index) => {
-          return <MovieCard data={item} key={index + item.id} />
-        })}
-      </div>
-      <div onClick={()=>{} }>Load more</div>
+    <div>
+      {params.page === 'popular' && <PopularMovie />}
+      {params.page === 'top-rated' && <TopRatedMovie />}
+      {params.page === 'now-playing' && <NowPlayingMovie />}
     </div>
   );
 }

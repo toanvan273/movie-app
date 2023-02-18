@@ -13,10 +13,10 @@ export const getLastest = () => {
   })
 }
 
-export const getNowPlaying = () => {
+export const getNowPlaying = (page) => {
   return axios({
     method: "get",
-    url: `${Config.API}/movie/now_playing`,
+    url: `${Config.API}/movie/now_playing?page=${page?page:1}`,
     headers: {
       Authorization: "Bearer " + Config.accessToken,
     }
@@ -24,7 +24,6 @@ export const getNowPlaying = () => {
 }
 
 export const getPopular = (page) => {
-
   return axios({
     method: "get",
     url: `${Config.API}/movie/popular?page=${page?page:1}`,
@@ -34,10 +33,10 @@ export const getPopular = (page) => {
   })
 }
 
-export const getTopRated = () => {
+export const getTopRated = (page) => {
   return axios({
     method: "get",
-    url: `${Config.API}/movie/top_rated`,
+    url: `${Config.API}/movie/top_rated?page=${page?page:1}`,
     headers: {
       Authorization: "Bearer " + Config.accessToken,
     }
