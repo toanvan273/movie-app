@@ -1,3 +1,4 @@
+import axios from "axios"
 import { Config } from "../constants/config"
 
 
@@ -22,10 +23,11 @@ export const getNowPlaying = () => {
   })
 }
 
-export const getPopular = () => {
+export const getPopular = (page) => {
+
   return axios({
     method: "get",
-    url: `${Config.API}/movie/popular`,
+    url: `${Config.API}/movie/popular?page=${page?page:1}`,
     headers: {
       Authorization: "Bearer " + Config.accessToken,
     }

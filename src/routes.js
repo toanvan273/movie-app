@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
-import NonePage from './pages/none-page';
+import NonePage from './pages/common-page/';
 import ListMovie from './pages/list-movie';
 import SingleMovie from './pages/single-movie';
 import Layout from './layout/Layout';

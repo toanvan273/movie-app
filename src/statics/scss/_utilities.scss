@@ -347,7 +347,9 @@ $utilities: map-merge(
         20: 20px,
         32: 32px,
         36: 36px,
-        620: 620px,
+        270: 270px,
+        300: 300px,
+        520: 520px,
       ),
     ),
     'top': (
@@ -381,10 +383,12 @@ $utilities: map-merge(
       state: hover,
       responsive: true,
       values: (
+        'fff': #fff,
         'dark22': $dark22,
         'light22': $light22,
         'dark5': $dark5,
         'dark4': $dark4,
+        'dark9': $dark9,
         'dark6': $dark6,
         'dark28': $dark28,
         'light28': $light28,
