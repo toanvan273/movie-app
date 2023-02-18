@@ -5,6 +5,7 @@ import { useQueryPopularMovie } from '../query-client';
 
 function PopularMovie() {
   const { movies, isFetching, fetchNextPage, hasNextPage } = useQueryPopularMovie();
+  
   const renderListMovie = data => {
     if (!data) return null;
     return data?.data.results.map((item, index) => {

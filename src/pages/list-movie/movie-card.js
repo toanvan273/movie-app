@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 function MovieCard({ data }) {
   const navigate = useNavigate();
   const goDetailMovie = () => {
-    console.log('ahdhsk0', data);
     navigate('/single-movie/'+data.id)
   }
+  
   return (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-20 px-2 mt-3">
       <Wapper className='br-5'>

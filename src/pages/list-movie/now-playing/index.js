@@ -11,7 +11,7 @@ function NowPlayingMovie() {
       return <MovieCard data={item} key={index + item.id} />
     })
   }
-console.log({ movies, isFetching});
+
   return (
     <div className='container'>
     <div className='row'>
