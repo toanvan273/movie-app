@@ -1,9 +1,12 @@
 import { useInfiniteQuery } from 'react-query';
+import { useRecoilValue } from 'recoil';
 import { getNowPlaying, getPopular, getTopRated } from '../../../api/movie';
+import { searchMovieAtom } from '../../../layout/header/recoil';
 
 export const useQueryPopularMovie = () => {
-    const { data: movies,error, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['POPULAR_MOVIE'],
-        ({ pageParam = 1 }) => getPopular(pageParam),
+    const searchAtom = useRecoilValue(searchMovieAtom)
+    const { data: movies,error, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['POPULAR_MOVIE',searchAtom],
+        ({ pageParam = 1 }) => getPopular(pageParam, searchAtom),
         {
             getNextPageParam: (lastPage, pages) => {
                 if (lastPage.data.results.length < 20) return undefined;
@@ -11,13 +14,13 @@ export const useQueryPopularMovie = () => {
             },
             retry: false,
         });
-    console.log('POPUPLAR', error);
     return { movies, isFetching, fetchNextPage, hasNextPage };
 };
 
 export const useQueryTopRatedMovie = () => {
-    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['TOP_RATED_MOVIE'],
-        ({ pageParam = 1 }) => getTopRated(pageParam),
+    const searchAtom = useRecoilValue(searchMovieAtom)
+    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['TOP_RATED_MOVIE',searchAtom],
+        ({ pageParam = 1 }) => getTopRated(pageParam,searchAtom),
         {
         getNextPageParam: (lastPage, pages) => {
             if (lastPage.data.results.length < 20) return undefined;
@@ -29,8 +32,9 @@ export const useQueryTopRatedMovie = () => {
 };
 
 export const useQueryNowPlayingMovie = () => {
-    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['TOP_RATED_MOVIE'],
-        ({ pageParam = 1 }) => getNowPlaying(pageParam),
+    const searchAtom = useRecoilValue(searchMovieAtom)
+    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['TOP_RATED_MOVIE',searchAtom],
+        ({ pageParam = 1 }) => getNowPlaying(pageParam,searchAtom),
         {
         getNextPageParam: (lastPage, pages) => {
             if (lastPage.data.results.length < 20) return undefined;

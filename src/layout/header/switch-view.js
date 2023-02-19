@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
+import { switchGridViewAtom } from './recoil';
 
 const SwitchView = () => {
-  const [grid, setGrid] = useState(true)
+  const [grid, setGrid] = useRecoilState(switchGridViewAtom)
   
   return (
     <Wapper onClick={()=>setGrid(!grid) }>
-      <span class="switch-bg" style={{left: grid? 0 : '50%'}}></span>
-      <label for="view-mode" class="switch-labels"  >
+      <span className="switch-bg" style={{left: grid? 0 : '50%'}}></span>
+      <label className="switch-labels"  >
         <span>Grid</span>
         <span>List</span>
       </label>

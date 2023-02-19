@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Select from 'react-select';
+import { useSetRecoilState } from 'recoil';
 import { customStyles, options } from './constant';
+import { searchMovieAtom } from './recoil';
 
 
-const SelectPage = () => {
+const SelectType = () => {
   const params = useParams()
   const navigate = useNavigate();
+  const setSearchMovie = useSetRecoilState(searchMovieAtom)
   const [value, setValue] = useState(options.find(e => e.value === '/' + params.page))
   
   const switchPage = option => {
+      setSearchMovie({})
       setValue(option);
       navigate('movie'+option.value)
   }
@@ -27,4 +31,4 @@ const SelectPage = () => {
   );
 };
 
-export default SelectPage;
+export default SelectType;
