@@ -2,9 +2,7 @@ import React from 'react';
 
 function NonePage() {
   return (
-    <div>
-     NonePage
-    </div>
+    <div> Page doesn't exist!</div>
   );
 }
 export default NonePage;

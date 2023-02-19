@@ -4,7 +4,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Select from 'react-select';
 import { customSortStyles, optionsSort } from './constant';
 import DatePicker from 'react-datepicker';
-import 'react-input-range/lib/css/index.css'
 import { useRecoilState } from 'recoil';
 import { searchMovieAtom } from '../recoil';
 import { useOnClickOutside } from '../../../hook';

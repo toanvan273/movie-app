@@ -3,7 +3,7 @@ import MovieCard from '../movie-card';
 import { useQueryTopRatedMovie } from '../query-client';
 
 function TopRatedMovie() {
-  const { movies, error, fetchNextPage, hasNextPage } = useQueryTopRatedMovie();
+  const { movies, fetchNextPage, hasNextPage } = useQueryTopRatedMovie();
   const renderListMovie = data => {
     if (!data) return null;
     return data?.data.results.map((item, index) => {

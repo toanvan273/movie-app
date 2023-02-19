@@ -1,8 +1,8 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import styled from 'styled-components';
-import { Tooltip as ReactTooltip } from 'react-tooltip';
+
 function WapperActions() {
-    
     return (
       <Wapper>
          <div className='wapper-actions mt-2 text-fff'>
@@ -18,37 +18,41 @@ function WapperActions() {
 
         <div className='d-inline-flex ms-2'>
             <div className='list'>
-             <div data-tip id={"add-list"} className='round_circle d-inline-flex justify-content-center align-items-center'>
+             <div data-tip data-for='addList' className='round_circle d-inline-flex justify-content-center align-items-center'>
                 <i className="fa fa-list-ul text-fff" aria-hidden="true"></i>
               </div>
-              
-              {/* <ReactTooltip anchorId={'add-list'}  variant="warning" place="left">
-                <span className="f-14 fw-400">
-                  Add to list
-                </span>
-              </ReactTooltip> */}
-               
+              <ReactTooltip id='addList' >
+                <span>Add to list</span>
+              </ReactTooltip>
             </div>
 
             <div className='list'>
-            <div className='round_circle d-inline-flex justify-content-center align-items-center'>
-                <i className="fa fa-heart text-fff" aria-hidden="true"></i>
-            </div>
-            </div>
-
-            <div className='list'>
-            <div className='round_circle d-inline-flex justify-content-center align-items-center'>
-                <i className="fa fa-bookmark text-fff" aria-hidden="true"></i>
-            </div>
+              <div data-tip data-for='addFavorite' className='round_circle d-inline-flex justify-content-center align-items-center'>
+                  <i className="fa fa-heart text-fff" aria-hidden="true"></i>
+                </div>
+                <ReactTooltip id='addFavorite'>
+                  <span>Mask as favorite</span>
+                </ReactTooltip>
             </div>
 
             <div className='list'>
-            <div className='round_circle d-inline-flex justify-content-center align-items-center'>
-                <i className="fa fa-star text-fff" aria-hidden="true"></i>
+              <div data-tip data-for='addWatchlist' className='round_circle d-inline-flex justify-content-center align-items-center'>
+                  <i className="fa fa-bookmark text-fff" aria-hidden="true"></i>
+                </div>
+                <ReactTooltip id='addWatchlist'>
+                    <span>Add to your watchlist</span>
+                  </ReactTooltip>
             </div>
-            </div>
-        </div>
 
+            <div className='list'>
+              <div data-tip data-for='addRate' className='cs-pointer round_circle d-inline-flex justify-content-center align-items-center'>
+                  <i className="fa fa-star text-fff" aria-hidden="true"></i>
+                </div>
+                <ReactTooltip id='addRate'>
+                  <span>Rate it</span>
+                </ReactTooltip>
+              </div>
+          </div>
         <div className='d-inline-flex ms-3'>
             <div className='text-dark5-hover cs-pointer'>
             <i className="fa fa-play text-fff" aria-hidden="true"></i>
@@ -56,7 +60,6 @@ function WapperActions() {
             </div>
         </div>
         </div>
-        
       </Wapper>
     );
   }

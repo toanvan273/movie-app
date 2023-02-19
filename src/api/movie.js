@@ -82,3 +82,23 @@ export const getVideos = (movie_id) => {
     }
   })
 }
+
+export const rateMovie = (movie_id) => {
+  return axios({
+    method: "post",
+    url: `${Config.API}/movie/${movie_id}/rating`,
+    headers: {
+      Authorization: "Bearer " + Config.accessToken,
+    }
+  })
+}
+
+export const removeRateMovie = (movie_id) => {
+  return axios({
+    method: "delete",
+    url: `${Config.API}/movie/${movie_id}/rating`,
+    headers: {
+      Authorization: "Bearer " + Config.accessToken,
+    }
+  })
+}

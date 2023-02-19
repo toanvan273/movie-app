@@ -5,7 +5,7 @@ import { searchMovieAtom } from '../../../layout/header/recoil';
 
 export const useQueryPopularMovie = () => {
     const searchAtom = useRecoilValue(searchMovieAtom)
-    const { data: movies,error, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['POPULAR_MOVIE',searchAtom],
+    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['POPULAR_MOVIE',searchAtom],
         ({ pageParam = 1 }) => getPopular(pageParam, searchAtom),
         {
             getNextPageParam: (lastPage, pages) => {
