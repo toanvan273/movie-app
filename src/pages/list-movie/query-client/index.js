@@ -33,7 +33,7 @@ export const useQueryTopRatedMovie = () => {
 
 export const useQueryNowPlayingMovie = () => {
     const searchAtom = useRecoilValue(searchMovieAtom)
-    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['TOP_RATED_MOVIE',searchAtom],
+    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['NOW_PLAYING_MOVIE',searchAtom],
         ({ pageParam = 1 }) => getNowPlaying(pageParam,searchAtom),
         {
         getNextPageParam: (lastPage, pages) => {
@@ -42,5 +42,19 @@ export const useQueryNowPlayingMovie = () => {
         },
         retry: false,
     });
+    return { movies, isFetching, fetchNextPage, hasNextPage };
+};
+
+export const useQueryMovie = ({key, api}) => {
+    const searchAtom = useRecoilValue(searchMovieAtom)
+    const { data: movies, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery([key,searchAtom],
+        ({ pageParam = 1 }) => api(pageParam, searchAtom),
+        {
+            getNextPageParam: (lastPage, pages) => {
+                if (lastPage.data.results.length < 20) return undefined;
+                return pages.length + 1;
+            },
+            retry: false,
+        });
     return { movies, isFetching, fetchNextPage, hasNextPage };
 };
